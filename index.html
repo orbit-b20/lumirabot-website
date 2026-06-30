@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiraBot | Smart AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0052FF',
+                        accent: '#F59E0B',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            .main-gradient {
+                background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <i class="fa fa-robot text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-dark">Lumira<span class="text-primary">Bot</span></span>
+            </a>
+
+            <div class="hidden md:flex gap-6">
+                <a href="#home" class="hover:text-primary transition-colors font-medium">Home</a>
+                <a href="#about" class="hover:text-primary transition-colors font-medium">About</a>
+                <a href="#features" class="hover:text-primary transition-colors font-medium">Features</a>
+                <a href="#how-it-works" class="hover:text-primary transition-colors font-medium">How It Works</a>
+                <a href="#vision" class="hover:text-primary transition-colors font-medium">Vision & Mission</a>
+                <a href="#community" class="hover:text-primary transition-colors font-medium">Community</a>
+            </div>
+
+            <button class="md:hidden text-2xl" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full shadow-lg" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#home" class="py-2 hover:text-primary">Home</a>
+                <a href="#about" class="py-2 hover:text-primary">About</a>
+                <a href="#features" class="py-2 hover:text-primary">Features</a>
+                <a href="#how-it-works" class="py-2 hover:text-primary">How It Works</a>
+                <a href="#vision" class="py-2 hover:text-primary">Vision & Mission</a>
+                <a href="#community" class="py-2 hover:text-primary">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="pt-32 pb-24 main-gradient text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-[clamp(2.2rem,5vw,3.2rem)] font-bold leading-tight text-shadow">
+                    LumiraBot<br>
+                    <span class="text-primary">Smart AI Assistant</span>
+                </h1>
+                <p class="mt-6 text-lg text-gray-200 leading-relaxed">
+                    Your intelligent companion built to bring clarity, useful information, and reliable help. Simple, fast, and designed to make your daily tasks easier, whether for work, study, or personal use.
+                </p>
+                <div class="mt-10 flex flex-wrap gap-5 justify-center md:justify-start">
+                    <a href="#about" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow">
+                        🚀 Learn More
+                    </a>
+                    <a href="#community" class="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-lg font-semibold backdrop-blur transition-shadow">
+                        👥 Join Us
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-2xl text-center">
+                    <i class="fa fa-lightbulb-o text-6xl text-primary mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Intelligence Made Simple</h3>
+                    <p class="text-gray-200 leading-relaxed">
+                        LumiraBot combines advanced technology with easy-to-use design. We turn complex information into clear answers, so you can focus on what matters most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.2rem)] font-bold text-dark">About LumiraBot</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg">Get to know what LumiraBot is and why we built it</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-dark mb-5">What is LumiraBot?</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        LumiraBot is an intelligent AI platform created to simplify access to information and help users find clear, accurate answers to their questions. We believe that knowledge should be easy to understand, not complicated or confusing.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        The name comes from <em>Lumen</em> — meaning light and clarity — and <em>Bot</em> — representing a smart, always-ready helper. Our goal is to make knowledge accessible to everyone, regardless of their background or experience.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        We started this project because we saw that many people still find it difficult to get simple, reliable information online. LumiraBot is built to solve that problem — giving you straight answers without unnecessary details or confusing terms.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Every part of LumiraBot is designed with the user in mind: simple interface, fast response, and information that is easy to read and apply.
+                    </p>
+                </div>
+                <div class="md:w-1/2 bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl border border-gray-100 shadow-lg">
+                    <h4 class="text-xl font-semibold mb-6 text-center">Core Values</h4>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                            <i class="fa fa-check-circle text-3xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Accuracy</h4>
+                            <p class="text-sm text-gray-600">Information you can trust</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                            <i class="fa fa-bolt text-3xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Speed</h4>
+                            <p class="text-sm text-gray-600">Quick and responsive results</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                            <i class="fa fa-shield text-3xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Privacy</h4>
+                            <p class="text-sm text-gray-600">Safe and private experience</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                            <i class="fa fa-smile-o text-3xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Simplicity</h4>
+                            <p class="text-sm text-gray-600">Easy to use for everyone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.2rem)] font-bold text-dark">What We Offer</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg">Useful features to help you in many situations</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-book text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Knowledge & Answers</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get clear explanations and information across many topics — science, history, technology, daily life, and more. All written in simple language so it is easy to understand.
+                    </p>
+                </div>
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="
+                        <i class="fa fa-pencil text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Writing & Summaries</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Improve your texts, create drafts for emails, reports, or articles, or turn long documents into short, easy-to-read summaries that save your time.
+                    </p>
+                </div>
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-lightbulb-o text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ideas & Suggestions</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get creative ideas, recommendations, and practical solutions for work, study, planning events, solving problems, or even daily activities.
+                    </p>
+                </div>
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-language text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Language Support</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Translate text between many languages, correct grammar mistakes, or rephrase sentences to make them clearer, more professional, or easier to read.
+                    </p>
+                </div>
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-search text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Research Help</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Find and organize information, help you understand complex topics, and give you a structured overview so you can learn faster and more effectively.
+                    </p>
+                </div>
+                <div class="bg-white p-7 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-clock-o text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Available 24/7</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Access LumiraBot anytime, anywhere. There is no waiting time — you can get help whenever you need it, day or night, without restrictions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.2rem)] font-bold text-dark">How It Works</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg">Simple steps to get the help you need</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">1</div>
+                        <h3 class="text-xl font-semibold mb-3">Ask Your Question</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Type whatever you want to know or need help with — it can be a simple question, a request for explanation, or a task you want to complete.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">2</div>
+                        <h3 class="text-xl font-semibold mb-3">Get Clear Answers</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            LumiraBot processes your request and provides a response that is direct, easy to understand, and free from unnecessary technical terms.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-5">3</div>
+                        <h3 class="text-xl font-semibold mb-3">Use & Learn</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Apply the information or suggestions you receive. If you need more details or follow-up, you can ask again anytime you want.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-blue-50 p-6 rounded-xl border border-blue-100">
+                    <h4 class="text-lg font-semibold text-center text-primary mb-3">Our Development Approach</h4>
+                    <p class="text-gray-700 text-center leading-relaxed">
+                        LumiraBot is continuously updated and improved. We collect feedback from users to make it better, faster, and more useful over time. We focus on quality rather than just quantity, ensuring every response is helpful and reliable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.2rem)] font-bold text-dark">Vision & Mission</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg">Where we are going and what we want to achieve</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Our Vision</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To become the most trusted and easy-to-use AI assistant in the world, helping people learn, work, and solve problems more efficiently every day. We want to build a tool that brings real value and makes information accessible to everyone, no matter where they are.
+                    </p>
+                    <p class="text-gray-700 mt-4 leading-relaxed">
+                        We imagine a future where anyone can get clear, reliable answers instantly — removing barriers to knowledge and making daily life simpler and more productive.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Our Mission</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-3 leading-relaxed">
+                        <li>Provide accurate, simple, and easy-to-understand information for all users</li>
+                        <li>Keep improving our technology to give faster and better results</li>
+                        <li>Maintain high standards of privacy and security for every user</li>
+                        <li>Make advanced AI technology accessible and affordable for everyone</li>
+                        <li>Build a community where users can give feedback and help us grow together</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.2rem)] font-bold text-dark">Connect With Us</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg">Stay updated and be part of our growing community</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <a href="https://x.com/LumiraBot" target="_blank" class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow hover:bg-gray-100">
+                    <i class="fa fa-twitter text-3xl text-primary mb-3"></i>
+                    <p class="font-medium">X (Twitter)</p>
+                    <p class="text-sm text-gray-500">@LumiraBot</p>
+                </a>
+                <a href="https://lumirabot.com" target="_blank" class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow hover:bg-gray-100">
+                    <i class="fa fa-globe text-3xl text-primary mb-3"></i>
+                    <p class="font-medium">Website</p>
+                    <p class="text-sm text-gray-500">lumirabot.com</p>
+                </a>
+                <a href="mailto:info@lumirabot.com" class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow hover:bg-gray-100">
+                    <i class="fa fa-envelope text-3xl text-primary mb-3"></i>
+                    <p class="font-medium">Email</p>
+                    <p class="text-sm text-gray-500">info@lumirabot.com</p>
+                </a>
+            </div>
+
+            <div class="mt-12 max-w-2xl mx-auto text-center bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold mb-3">Get Updates</h4>
+                <p class="text-gray-600 mb-4">Follow our official channels to get the latest news, improvements, and updates about LumiraBot.</p>
+                <p class="text-sm text-gray-500">We are always working to make LumiraBot better for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <i class="fa fa-robot text-white"></i>
+                </div>
+                <span class="text-lg font-bold">Lumira<span class="text-primary">Bot</span></span>
+            </div>
+            <p class="text-gray-300 mb-3">© 2026 LumiraBot. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">Smart AI Assistant for everyone — Simple, Clear, and Reliable</p>
+            <p class="text-gray-500 text-xs mt-4 max-w-xl mx-auto">
+                LumiraBot is designed to provide helpful information and support. All responses are for general guidance only. We continuously improve our system to give you the best experience.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
